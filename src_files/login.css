@@ -1,0 +1,182 @@
+
+/* login */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50rem;
+    width:100%;
+}
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    padding: 40px;
+    width: 400px;
+    text-align: center;
+}
+.welcome p{
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+}
+input[type="text-login"],
+input[type="password-login"]
+{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/*button*/
+.button{
+    font-weight: 600;
+    transition: background-color 0.3ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 5px;
+    background-color: rgb(255, 166, 0);
+    width: 100%;
+    margin-top: 1rem;
+    border: none;
+}
+.button:hover{
+    background-color:#ffb764;
+}
+/* submit */
+input[type=submit] 
+{
+    color: white;
+
+}
+.links {
+    margin-top: 20px;
+}
+.links a {
+    color:  #000000;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.links a:hover {
+    color:  #ffaa00;
+}  
+
+/* Background Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url(/assert/login_bg.jpg);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Welcome Text */
+.welcome p {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff7e5f;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Input Fields */
+#username,
+#password {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: 2px solid #ff7e5f;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s ease;
+    font-size: 16px;
+}
+
+/* Input Focus Effect */
+#username:focus,
+#password:focus {
+    border-color: #feb47b;
+    box-shadow: 0 0 10px rgba(255, 126, 95, 0.5);
+}
+
+/* Login Button */
+.button {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.3s ease, background 0.3s ease;
+    margin-top: 20px;
+}
+
+.button:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.3);
+}
+
+/* Links */
+.links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #ff7e5f;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #feb47b;
+}
+
+/* Separator */
+.links span {
+    color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

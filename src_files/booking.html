@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Booking</title>
+
+    <!-- React & Babel -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const BookingPage = () => {
+            // Get restaurant name from URL parameters
+            const queryParams = new URLSearchParams(window.location.search);
+            const restaurantName = queryParams.get("restaurant") || "Selected Restaurant";
+
+            return (
+                <div className="booking-container">
+                    <h1 style={{ textAlign: "center", marginTop: "20px" }}>Booking Confirmation</h1>
+                    <p style={{ textAlign: "center" }}>You are booking a table at <strong>{restaurantName}</strong>.</p>
+                    <div style={{ textAlign: "center", marginTop: "20px" }}>
+                        <button className="confirm-booking-btn" onClick={() => alert("Booking Confirmed!")}>
+                            Confirm Booking
+                        </button>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<BookingPage />, document.getElementById("root"));
+    </script>
+
+    <style>
+        .confirm-booking-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .confirm-booking-btn:hover {
+            background-color: darkgreen;
+        }
+    </style>
+
+</body>
+</html>

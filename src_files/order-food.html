@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food</title>
+    <!-- React and ReactDOM CDN Links -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel CDN -->
+    <script src="https://unpkg.com/@babel/standalone"></script>
+    <link rel="stylesheet" href="order-food.css">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const foodItems = [
+            { name: "Butter Chicken", price: "₹450", imgSrc: "/assert/butter chicken.jpg" },
+            { name: "Masala Dosa", price: "₹120", imgSrc: "/assert/masala dosa.jpg" },
+            { name: "Pav Bhaji", price: "₹180", imgSrc: "/assert/pav bhaji.jpg" },
+            { name: "Hyderabadi Chicken Biriyani", price: "₹180", imgSrc: "/assert/hyderabadi chicken biriyani.jpg"},
+            { name: "Naan", price: "₹180", imgSrc: "/assert/naan.jpg" },
+            { name: "Samosa", price: "₹180", imgSrc: "/assert/samosa.jpg" },
+            { name: "Paneer Tikka", price: "₹180", imgSrc: "/assert/paneer tikka.jpg" },
+            { name: "Spring Rolls", price: "₹180", imgSrc: "/assert/spring roll.jpg" },
+            { name: "Lobster", price: "₹180", imgSrc: "/assert/lobster.jpg" },
+            { name: "Hamburger", price: "₹180", imgSrc: "/assert/hamburger.jpg" }
+        ];
+
+        const FoodItem = ({ name, price, imgSrc }) => {
+            const handleOrderClick = () => {
+                const encodedName = encodeURIComponent(name);
+                const encodedPrice = encodeURIComponent(price);
+                window.location.href = `payment.html?name=${encodedName}&price=${encodedPrice}`;
+            };
+
+            return (
+                <div className="food-item">
+                    <img src={imgSrc} alt={name} className="food-img" />
+                    <h3>{name}</h3>
+                    <p className="price">{price}</p>
+                    <button className="order-btn" onClick={handleOrderClick}>Order Now</button>
+                </div>
+            );
+        };
+
+        const OrderFood = () => {
+            return (
+                <div className="food-items-container">
+                    {foodItems.map((item, index) => (
+                        <FoodItem key={index} {...item} />
+                    ))}
+                </div>
+            );
+        };
+
+        ReactDOM.render(<OrderFood />, document.getElementById('root'));
+    </script>
+</body>
+</html>

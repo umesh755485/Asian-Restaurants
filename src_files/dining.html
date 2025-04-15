@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Restaurants in Hyderabad</title>
+
+    <!-- CDN Links for React -->
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="dining.css">
+
+</head>
+
+<body>
+
+    <div id="root"></div> <!-- This is where the React app will be rendered -->
+
+    <!-- React Component -->
+    <script type="text/babel">
+
+        // DiningItem Component for each restaurant
+        const DiningItem = ({ name, description, imgSrc }) => {
+            return (
+                <div className="dining-item">
+                    <img src={imgSrc} alt={name} />
+                    <h3>{name}</h3>
+                    <p>{description}</p>
+                    {/* Modify the Book Now link to pass restaurant name as a query parameter */}
+                    <a href={`/booking.html?restaurant=${encodeURIComponent(name)}`} className="book-now-btn">
+                        Book Now
+                    </a>
+                </div>
+            );
+        };
+
+        // DiningPage Component that holds all restaurants
+        const DiningPage = () => {
+            const restaurants = [
+                {
+                    name: 'Bawarchi Restaurant',
+                    description: 'Famous for its Hyderabadi Biryani.',
+                    imgSrc: '/assert/bawarchi.jpg'
+                },
+                {
+                    name: 'Paradise',
+                    description: 'A legendary destination for authentic biryani.',
+                    imgSrc: '/assert/paradise.jpg'
+                },
+                {
+                    name: 'Olive Bistro',
+                    description: 'Perfect for fine dining with a scenic view.',
+                    imgSrc: '/assert/olive bistro.jpg'
+                },
+                {
+                    name: 'AB’s Absolute Barbecues',
+                    description: 'Specializes in live grills and exotic dishes.',
+                    imgSrc: '/assert/AB’s Absolute Barbecues.jpg'
+                }
+                // You can add more restaurants here
+            ];
+
+            return (
+                <div>
+                    <h1 style={{ textAlign: 'center', marginTop: '20px' }}>Famous Restaurants in Hyderabad</h1>
+                    <div className="dining-items-container">
+                        {restaurants.map((restaurant, index) => (
+                            <DiningItem
+                                key={index}
+                                name={restaurant.name}
+                                description={restaurant.description}
+                                imgSrc={restaurant.imgSrc}
+                            />
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        // Rendering the DiningPage component to the DOM
+        ReactDOM.render(<DiningPage />, document.getElementById('root'));
+
+    </script>
+
+</body>
+
+</html>

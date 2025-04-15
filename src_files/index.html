@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Babylonica&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="/assert/logo_qp.png" type="image/x-icon">
+    <title>QuickPlate</title>
+
+    <!-- React Links -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div> <!-- React will render everything inside this div -->
+
+    <script type="text/babel">
+        function App() {
+            return (
+                <div className="bg">
+                    <div className="nav-bar">
+                        <ul>
+                            <li><i className="fa-solid fa-house"></i></li>
+                            <li>Add Restaurant +</li>
+                            <a href="signup.html"><li>Signup <i className="fa-solid fa-user-plus"></i></li></a>
+                            <a href="login.html"><li>Login <i className="fa-solid fa-right-to-bracket"></i></li></a>
+                        </ul>
+                    </div>
+                    <h1 className="title">QuickPlate</h1>
+                    <h2 className="sub-title">Discover the best food & drinks in your Place</h2>
+                    <div className="search">
+                        <select className="search-select" id="searchCategory">
+                            <option value="all">Category</option>
+                            <option value="restaurant">Restaurant</option>
+                            <option value="cuisine">Cuisine</option>
+                            <option value="dish">Dish</option>
+                        </select>
+                        <input placeholder="Search for restaurant, cuisine, or a dish" className="search-input" id="searchInput" />
+                        <button className="search-icon" onClick={() => alert("Search clicked!")}>
+                            <i className="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <div className="shop-section">
+                        <div className="box1 box">
+                            <div className="box-content">
+                                <div className="box-img1"></div>
+                                <a href="order-food.html">
+                                    <p className="p1">Order Online</p>
+                                </a>
+                                <p className="p2">Stay Home Order to your doorstep</p>
+                            </div>
+                        </div>
+                        
+                        <div className="box1 box">
+                            <div className="box-content">
+                                <div className="box-img1"></div>
+                                <a href="dining.html">
+                                    <p className="p1">Dining</p>
+                                </a>
+                                <p className="p2">View the City's favorite dining venues</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2>Collections</h2>
+                    <h3>
+                        Explore curated lists of top restaurants, cafes, pubs, and bars in Hyderabad.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="order-food.html">
+                            All Collections <i className="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </h3>
+
+                    <div className="collections-section">
+                        <div className="boxcs">
+                            <div className="cs-img1">
+                                <p className="cs-1">Gujarati Meals</p>
+                                <br /><a href="gujarati-meals.html">7 places <i className="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div className="boxcs">
+                            <div className="cs-img2">
+                                <p className="cs-2">Asian Restaurants</p>
+                                <br /><a href="asian-restaurants.html">5 places <i className="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div className="boxcs">
+                            <div className="cs-img3">
+                                <p className="cs-2">Best Luxury Dinings</p>
+                                <br /><a href="luxury-dining.html">5 places <i className="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <div className="boxcs">
+                            <div className="cs-img4">
+                                <p className="cs-2">South Indian</p>
+                                <br /><a href="south-indian.html">10 places <i className="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer>
+                        <div className="foot-panel2">
+                            <ul>
+                                <p className="fh1">ABOUT QuickPlate</p>
+                                <p>Who We Are</p>
+                                <p>Blog</p>
+                                <p>Work With Us</p>
+                            </ul>
+                            <ul>
+                                <p className="fh1">QuickPlateVERSE</p>
+                                <p>QuickPlate</p>
+                                <p>Blinkit</p>
+                                <p>Feeding India</p>
+                            </ul>
+                            <ul>
+                                <p className="fh1">FOR RESTAURANTS</p>
+                                <p>Partner With Us</p>
+                                <p>Apps For You</p>
+                            </ul>
+                        </div>
+                        <div className="foot-panel4">
+                            <div className="pages">
+                                <a>Conditions of Use</a>
+                                <a>Privacy Notice</a>
+                            </div>
+                            <div className="copyright">© 2024-2025, quickplate.com, Inc. or its affiliates</div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

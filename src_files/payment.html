@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Confirm Your Order</h2>
+        <h3 id="food-name"></h3>
+        <p id="food-price"></p>
+        <button class="confirm-btn" id="confirm-btn" onclick="confirmOrder()">Confirm Order</button>
+        
+        <p id="order-message" style="display: none; color: green; font-weight: bold;"></p>
+        
+        <!-- Receipt Section -->
+        <div id="receipt" style="display: none; border: 1px solid #ddd; padding: 10px; margin-top: 10px;">
+            <h3>Order Receipt</h3>
+            <p id="receipt-food"></p>
+            <p id="receipt-price"></p>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get("name"),
+                price: params.get("price"),
+            };
+        }
+
+        const { name, price } = getQueryParams();
+
+        document.getElementById("food-name").textContent = name;
+        document.getElementById("food-price").textContent = "Price: " + price;
+
+        function confirmOrder() {
+            // Show order confirmation message
+            document.getElementById("order-message").textContent = "Your order has been placed successfully!";
+            document.getElementById("order-message").style.display = "block";
+            
+            // Hide Confirm Order button
+            document.getElementById("confirm-btn").style.display = "none";
+            
+            // Show Receipt directly
+            document.getElementById("receipt-food").textContent = "Food Item: " + name;
+            document.getElementById("receipt-price").textContent = "Total Price: " + price;
+            document.getElementById("receipt").style.display = "block";
+        }
+    </script>
+</body>
+</html>

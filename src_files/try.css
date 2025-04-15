@@ -1,0 +1,182 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body {
+    background-color: #f5eaea; /* Light grey background color */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Back Button */
+.back-button a {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #f06543; /* Warm orange color */
+    color: #fff;
+    border-radius: 5px;
+    margin: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-button a:hover {
+    background-color: #d84d38; /* Darker orange on hover */
+    transform: scale(1.05);
+}
+
+/* Title */
+h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 20px 0;
+    color: #f06543; /* Matching orange color */
+    letter-spacing: 2px;
+}
+
+/* Restaurant List */
+.restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+    margin-top: 30px;
+}
+
+/* Restaurant Item */
+.restaurant-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.restaurant-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.restaurant-item img:hover {
+    opacity: 0.85;
+}
+
+/* Restaurant Name */
+.restaurant-item h2 {
+    font-size: 1.9rem;
+    color: #f06543;
+    margin-bottom: 12px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.restaurant-item h2:hover {
+    color: #d84d38; /* Darker orange on hover */
+}
+
+/* Restaurant Description */
+.restaurant-item p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Price */
+.restaurant-item p:last-child {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Hover Effects on Links */
+.restaurant-item a {
+    font-size: 1.3rem;
+    color: #f06543;
+    margin-top: 15px;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.restaurant-item a:hover {
+    color: #d84d38; /* Darker orange on hover */
+    transform: translateX(4px);
+}
+/* Book Now Button */
+.book-now-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #e2e2de, #f0e6e6); /* Vibrant gradient from peach to coral */
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.book-now-btn:hover {
+    background: linear-gradient(135deg, #ff9e80, #ff7a5c); /* Inverse gradient on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    border-color: #ff7a5c; /* Border color matches the peach */
+}
+
+.book-now-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px 2px rgba(255, 122, 92, 0.6); /* Soft focus effect with matching color */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .restaurant-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .restaurant-item {
+        padding: 15px;
+    }
+
+    .back-button a {
+        padding: 10px 18px;
+    }
+}
+
+/* Footer (Optional) */
+footer {
+    background-color: #f06543; /* Matching orange */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1rem;
+}

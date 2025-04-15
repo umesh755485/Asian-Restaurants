@@ -1,0 +1,136 @@
+/* Container for all food items */
+.food-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Style for individual food items */
+.food-item {
+    width: 250px; /* Adjust width as needed */
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, filter 0.4s ease;
+    margin-bottom: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: #333;
+}
+
+/* Hover effect for food items */
+.food-item:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background-color: #f0f1f6;
+    filter: brightness(1.1);
+}
+
+/* Image inside food item */
+.food-item img {
+    width: 100%; /* Ensures image takes full width of the food item */
+    height: 180px; /* Adjust height as needed */
+    object-fit: cover; /* Ensures image scales without distortion */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Zoom effect on image hover */
+.food-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+}
+
+/* Food name style */
+.food-item h3 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #FF4081;
+    transition: color 0.3s ease;
+}
+
+/* Price style */
+.price {
+    font-size: 1.2rem;
+    color: #FF7043;
+    margin: 5px 0;
+    font-weight: 600;
+}
+
+/* Order button style (no border, colorful, and more interactive) */
+.order-btn {
+    background: linear-gradient(to right, #cab2d6, #dc922b);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 2spx;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, filter 0.4s ease;
+    width: 100%; /* Button takes full width */
+    margin-top: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hover effect for order button */
+.order-btn:hover {
+    background: linear-gradient(to right, #0d0d0d, #090909);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(255, 105, 180, 0.3);
+    filter: brightness(1.1);
+}
+
+/* Active state for the button */
+.order-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive styling for small screens */
+@media (max-width: 768px) {
+    .food-item {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Height adjusts based on content */
+        padding: 10px;
+    }
+
+    .food-items-container {
+        gap: 15px; /* Reduce gap for smaller screens */
+        padding: 0 10px;
+    }
+
+    .food-item img {
+        height: 150px; /* Adjust image height for smaller screens */
+    }
+
+    /* Food name font size adjustment for smaller screens */
+    .food-item h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Price font size adjustment for smaller screens */
+    .price {
+        font-size: 1rem;
+    }
+}
+
+/* Animations for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
